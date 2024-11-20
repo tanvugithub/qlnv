@@ -85,6 +85,8 @@ btnInsert.onclick = async () => {
     btnUpdateSubmit.setAttribute("style", "display:none");
     btnInsertSubmit.removeAttribute("style", "display:none");
 
+    resetError();
+
     const elements = document.querySelectorAll("#formNV input, #formNV select");
     elements.forEach((element) => {
         element.value = "";
@@ -159,6 +161,8 @@ window.editNV = async (id) => {
     btnUpdateSubmit.removeAttribute("style", "display:none");
     btnInsertSubmit.setAttribute("style", "display:none");
 
+    resetError();
+
     document.getElementById('formNV').setAttribute('data-id', id)
 
     try {
@@ -223,3 +227,14 @@ const nonAccentVietnamese = (str) => {
     str = str.replace(/\u02C6|\u0306|\u031B/g, ""); // Â, Ê, Ă, Ơ, Ư
     return str;
 };
+
+const resetError = () => {
+    document.getElementById("tbUsername").innerHTML = "";
+    document.getElementById("tbName").innerHTML = "";
+    document.getElementById("tbEmail").innerHTML = "";
+    document.getElementById("tbPassword").innerHTML = "";
+    document.getElementById("tbNgayLam").innerHTML = "";
+    document.getElementById("tbLuongCB").innerHTML = "";
+    document.getElementById("tbChucVu").innerHTML = "";
+    document.getElementById("tbGiolam").innerHTML = "";
+}
