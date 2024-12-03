@@ -30,12 +30,12 @@ const renderTable = (data) => {
             }).format(qlnvServices.tongLuong(item.chucvu, item.luongCB))}
                 </td>
                 <td>${qlnvServices.xepLoai(item.giolam)}</td>
-                <td>
-                    <button class="btn btn-warning w-100" data-toggle="modal" 
+                <td style="display:flex; gap:7px; justify-content:center">
+                    <button class="btn btn-warning" data-toggle="modal" 
                     data-target="#myModal"
                     onClick="editNV('${item.id}')"
                     >Edit</button>
-                    <button class="btn btn-danger mt-2 w-100" onClick="deleteNV('${item.id}')">Delete</button>
+                    <button class="btn btn-danger" onClick="deleteNV('${item.id}')">Delete</button>
                 </td>
             </tr>
         `;
